@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage</title>
+</head>
+
+<body style="text-align: center">
+    <p>
+        <div id="number">0</div>
+    </p>
+    <button type="button" onclick="add()"> + </button>
+</body>
+<script>
+    window.onload = function () {
+        if (!localStorage.getItem('num')) {
+            localStorage.setItem('num', 0);
+        }
+        document.getElementById("number").innerHTML = localStorage.getItem('num');
+    }
+    function add() {
+        var n = localStorage.getItem('num');
+        n++;
+        document.getElementById("number").innerHTML = n;
+        localStorage.setItem('num', n);
+    }
+</script>
